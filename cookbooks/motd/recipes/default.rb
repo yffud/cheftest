@@ -6,7 +6,7 @@
 template "/etc/motd" do
  action :create
  #content "Property of COMPANY NAME"
- source "motd.erb"
+ source "/home/chef/chef-repo/cookbooks/motd/templates/default/motd.erb"
  mode "0644"
  owner "root"
  group "root"
