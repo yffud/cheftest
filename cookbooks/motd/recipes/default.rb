@@ -3,7 +3,7 @@
 # Recipe:: default
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
-file "/etc/motd" do
+template "/etc/motd" do
  action :create
  #content "Property of COMPANY NAME"
  source "motd.erb"
