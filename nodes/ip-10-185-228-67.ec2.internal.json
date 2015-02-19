@@ -193,13 +193,13 @@
     "filesystem": {
       "/dev/xvde": {
         "kb_size": "8256952",
-        "kb_used": "2656168",
-        "kb_available": "5181356",
+        "kb_used": "2659540",
+        "kb_available": "5177984",
         "percent_used": "34%",
         "mount": "/",
         "total_inodes": "524288",
-        "inodes_used": "80372",
-        "inodes_available": "443916",
+        "inodes_used": "80505",
+        "inodes_available": "443783",
         "inodes_percent_used": "16%",
         "fs_type": "ext4",
         "mount_options": [
@@ -361,10 +361,10 @@
       "system": "xen",
       "role": "guest"
     },
-    "uptime_seconds": 110624,
-    "uptime": "1 day 06 hours 43 minutes 44 seconds",
-    "idletime_seconds": 219479,
-    "idletime": "2 days 12 hours 57 minutes 59 seconds",
+    "uptime_seconds": 112810,
+    "uptime": "1 day 07 hours 20 minutes 10 seconds",
+    "idletime_seconds": 223655,
+    "idletime": "2 days 14 hours 07 minutes 35 seconds",
     "memory": {
       "swap": {
         "cached": "0kB",
@@ -372,23 +372,23 @@
         "free": "0kB"
       },
       "total": "1695028kB",
-      "free": "917856kB",
-      "buffers": "161528kB",
-      "cached": "408484kB",
-      "active": "427444kB",
-      "inactive": "252012kB",
-      "dirty": "40kB",
+      "free": "913260kB",
+      "buffers": "161772kB",
+      "cached": "411760kB",
+      "active": "429972kB",
+      "inactive": "253456kB",
+      "dirty": "116kB",
       "writeback": "0kB",
-      "anon_pages": "109436kB",
-      "mapped": "15912kB",
-      "slab": "65120kB",
-      "slab_reclaimable": "45984kB",
-      "slab_unreclaim": "19136kB",
-      "page_tables": "3760kB",
+      "anon_pages": "109884kB",
+      "mapped": "15908kB",
+      "slab": "65416kB",
+      "slab_reclaimable": "46176kB",
+      "slab_unreclaim": "19240kB",
+      "page_tables": "3968kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "847512kB",
-      "committed_as": "267360kB",
+      "committed_as": "270844kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "17324kB",
       "vmalloc_chunk": "34359718644kB"
@@ -578,15 +578,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "61903",
-              "packets": "390",
+              "bytes": "376649",
+              "packets": "713",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "61903",
-              "packets": "390",
+              "bytes": "376649",
+              "packets": "713",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -596,16 +596,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "35739052",
-              "packets": "211547",
+              "bytes": "36994694",
+              "packets": "218688",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "93872687",
-              "packets": "227396",
+              "bytes": "95379204",
+              "packets": "236000",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -803,7 +803,7 @@
         "removable": "0"
       }
     },
-    "ohai_time": 1424383615.0893435,
+    "ohai_time": 1424385800.9488223,
     "cloud_v2": {
       "public_ipv4_addrs": [
         "23.20.202.77"
@@ -966,6 +966,13 @@
           "uid": 81,
           "shell": "/sbin/nologin",
           "gecos": "System message bus"
+        },
+        "ntp": {
+          "dir": "/etc/ntp",
+          "gid": 38,
+          "uid": 38,
+          "shell": "/sbin/nologin",
+          "gecos": ""
         }
       },
       "group": {
@@ -1201,6 +1208,12 @@
           "members": [
 
           ]
+        },
+        "ntp": {
+          "gid": 38,
+          "members": [
+
+          ]
         }
       }
     },
@@ -1220,14 +1233,14 @@
     "fqdn": "ip-10-185-228-67.ec2.internal",
     "domain": "ec2.internal",
     "recipes": [
-      "motd",
-      "motd::default"
+      "ntp",
+      "ntp::default"
     ],
     "roles": [
 
     ]
   },
   "run_list": [
-    "recipe[motd]"
+    "recipe[ntp]"
   ]
 }
