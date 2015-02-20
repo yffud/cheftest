@@ -1,12 +1,17 @@
-require 'spec_helper'
+require 'serverspec'
+set :backend, :exec 
 
-describe 'apache::default' do
-
-  # Serverspec examples can be found at
-  # http://serverspec.org/resource_types.html
-  
-  it 'does something' do
-    skip 'Replace this with meaningful tests'
-  end
-
-end
+describe 'apache' do
+ it "is installed" do
+ expect(package 'httpd').to be_installed
+ end
+ it "is running" do
+ expect(service 'httpd').to be_running
+ end
+ it "is listening on port 80" do
+ expect(port 80).to be_listening
+ end
+ it "displays a custom home page" do
+ expect(command("curl localhost").stdout).to match /hello/
+ end
+end 
